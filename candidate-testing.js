@@ -14,8 +14,8 @@ let questions = ["Who was the first American woman in space? ",
 "What is the minimum crew size for the ISS? "];
 let correctAnswers = ['Sally Ride', 'true', '40', 'Trajectory', '3'];
 let candidateAnswers = [];
-candidateAnswers.toLowerCase;
-candidateAnswers.toUpperCase;
+candidateAnswers.toLowerCase; //these here won't actually do anything
+candidateAnswers.toUpperCase; // these here won't actually do anything; need to probably include them in your if statement in gradeQuiz function; in the conditional somehow, so that the answer of SALLY RIDE or TRUE is equal to sally ride or true;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name // This needs to be corrected for final part!
@@ -64,11 +64,11 @@ Correct Answer: ${correctAnswers[4]}`);
 
 
   let numCorrect = (
-  (candidateAnswers[0] === correctAnswers[0]) +
-  (candidateAnswers[1] === correctAnswers[1]) +
-  (candidateAnswers[2] === correctAnswers[2]) +
-  (candidateAnswers[3] === correctAnswers[3]) +
-  (candidateAnswers[4] === correctAnswers[4]));
+  (candidateAnswers[0].toLowerCase() === correctAnswers[0].toLowerCase()) +
+  (candidateAnswers[1].toLowerCase() === correctAnswers[1].toLowerCase()) +
+  (candidateAnswers[2].toLowerCase() === correctAnswers[2].toLowerCase()) +
+  (candidateAnswers[3].toLowerCase() === correctAnswers[3].toLowerCase()) +
+  (candidateAnswers[4].toLowerCase() === correctAnswers[4].toLowerCase()));
   
 let grade = (((numCorrect)/5)*100);
 

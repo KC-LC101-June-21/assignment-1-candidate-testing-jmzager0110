@@ -5,18 +5,17 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
+let question = "";
+let correctAnswer = "Sally Ride";
+let candidateAnswer = "";
 let questions = ["Who was the first American woman in space? ", 
-"True or false: 5 kilometer == 5000 meters? ", "(5+3)/2*10=? ", 
-"Given the array ['8', 'Orbit', 'Trajectory', '45'], what entry is at index 2? ", 
+"True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", 
+"Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", 
 "What is the minimum crew size for the ISS? "];
 let correctAnswers = ['Sally Ride', 'true', '40', 'Trajectory', '3'];
 let candidateAnswers = [];
-
-
-
+candidateAnswers.toLowerCase;
+candidateAnswers.toUpperCase;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name // This needs to be corrected for final part!
@@ -64,10 +63,29 @@ Your Answer: ${candidateAnswers[4]}
 Correct Answer: ${correctAnswers[4]}`);
 
 
+  let numCorrect = (
+  (candidateAnswers[0] === correctAnswers[0]) +
+  (candidateAnswers[1] === correctAnswers[1]) +
+  (candidateAnswers[2] === correctAnswers[2]) +
+  (candidateAnswers[3] === correctAnswers[3]) +
+  (candidateAnswers[4] === correctAnswers[4]));
   
-  let grade;
-  //most of your code between grade and return grade
+let grade = (((numCorrect)/5)*100);
+
+
+let overAllStat;
+
+    if (grade >= 80) {
+      overAllStat = ("PASSED");
+    } else {
+      overAllStat = ("FAILED");
+  }
+
+  console.log(`
   
+  >>> Overall Grade : ${grade} % (${numCorrect} of 5 responses correct) <<<
+  >>> Status: ${overAllStat} <<<
+  `)
 
   return grade;
 }
